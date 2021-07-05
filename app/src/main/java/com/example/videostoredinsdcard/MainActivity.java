@@ -84,7 +84,6 @@ public class MainActivity extends AppCompatActivity {
         //looping through all rows and adding to list
         if (cursor != null && cursor.moveToFirst()) {
             do {
-
                 String title = cursor.getString(cursor.getColumnIndex(MediaStore.Video.Media.TITLE));
                 String duration = cursor.getString(cursor.getColumnIndex(MediaStore.Video.Media.DURATION));
                 String data = cursor.getString(cursor.getColumnIndex(MediaStore.Video.Media.DATA));
@@ -97,12 +96,6 @@ public class MainActivity extends AppCompatActivity {
             } while (cursor.moveToNext());
         }
 
-      /*  for (int i = 0; videoArrayList !=null && i < videoArrayList.size(); i++) {
-            if (videoArrayList.get(i).videoUri.equals("/storage/23DA-19EB/Video/Aaaa.mp4"));
-            ///storage/23DA-19EB/Video/Aaaa.mp4
-
-            //if (videoArrayList.get(i).)
-        }*/
 
         VideoAdapter adapter = new VideoAdapter(this, videoArrayList);
         recyclerView.setAdapter(adapter);
